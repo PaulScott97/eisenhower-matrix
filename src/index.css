@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* body,
+html {
+  height: 100%;
+} */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(267, 25%, 10%);
+  font-size: 1rem;
+  color: #ddd;
+  padding: 1rem 2rem;
+}
+
+nav div {
+  display: flex;
+  gap: 2rem;
+}
+
+.eisenhower-view {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 2rem;
+  background-color: hsl(267, 75%, 5%);
+  grid-template-columns: 2rem 1fr 1fr;
+  grid-template-rows: 2rem 1fr 1fr;
+  grid-template-areas:
+    "a b c"
+    "d e f"
+    "g h i";
+  flex: 1;
+}
+
+.quadrant {
+  border: 0.1rem solid #555;
+  border-radius: 1rem;
+  color: #fff;
+}
+
+.urgent-important {
+  grid-area: e;
+}
+
+.not-urgent-important {
+  grid-area: f;
+}
+
+.urgent-not-important {
+  grid-area: h;
+}
+
+.not-urgent-not-important {
+  grid-area: i;
+}
