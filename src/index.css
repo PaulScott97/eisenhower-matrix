@@ -2,13 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
 }
 
-/* body,
+body,
 html {
-  height: 100%;
-} */
+  overflow: hidden;
+  /* height: 100%; */
+}
 
 .container {
   display: flex;
@@ -30,9 +32,25 @@ nav div {
   gap: 2rem;
 }
 
+.btn {
+  border: none;
+  aspect-ratio: 1;
+  height: 100%;
+  width: auto;
+  border-radius: 0.6rem;
+  font-size: 1.4rem;
+  background-color: hsl(267, 75%, 60%);
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: hsl(267, 50%, 50%);
+}
+
 .eisenhower-view {
   display: grid;
-  gap: 2rem;
+  gap: 1rem;
   padding: 2rem 2rem;
   background-color: hsl(267, 75%, 5%);
   grid-template-columns: 2rem 1fr 1fr;
@@ -44,10 +62,48 @@ nav div {
   flex: 1;
 }
 
+.eisenhower-title {
+  color: white;
+  /* background-color: red; */
+  text-align: center;
+  font-size: 1.8rem;
+}
+
 .quadrant {
   border: 0.1rem solid #555;
   border-radius: 1rem;
   color: #fff;
+  overflow: hidden;
+}
+
+.quadrant div {
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  height: 2.8rem;
+  font-weight: bold;
+  background-color: hsl(267, 25%, 10%);
+  border-bottom: #555 solid 0.1rem;
+  overflow: hidden;
+  font-size: 1.2rem;
+}
+
+.urgent {
+  grid-area: b;
+}
+
+.not-urgent {
+  grid-area: c;
+}
+
+.important {
+  grid-area: d;
+  writing-mode: sideways-lr;
+}
+
+.not-important {
+  grid-area: g;
+  writing-mode: sideways-lr;
 }
 
 .urgent-important {

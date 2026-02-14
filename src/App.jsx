@@ -17,7 +17,7 @@ function Navbar() {
         <hr />
         <h2>Eisenhower</h2>
       </div>
-      <button>+</button>
+      <Button>+</Button>
     </nav>
   );
 }
@@ -29,19 +29,31 @@ function TasksView() {
   if (view === "people") return <People />;
 }
 
+function Button({ children }) {
+  return <button className="btn">{children}</button>;
+}
+
 function Eisenhower() {
   return (
     <main className="eisenhower-view">
-      <Quadrant>urgent-important</Quadrant>
-      <Quadrant>not-urgent-important</Quadrant>
-      <Quadrant>urgent-not-important</Quadrant>
-      <Quadrant>not-urgent-not-important</Quadrant>
+      <h3 className="eisenhower-title urgent">URGENT</h3>
+      <h3 className="eisenhower-title not-urgent">NOT URGENT</h3>
+      <h3 className="eisenhower-title important">IMPORTANT</h3>
+      <h3 className="eisenhower-title not-important">NOT IMPORTANT</h3>
+      <Quadrant name="do">urgent-important</Quadrant>
+      <Quadrant name="plan">not-urgent-important</Quadrant>
+      <Quadrant name="delegate">urgent-not-important</Quadrant>
+      <Quadrant name="delete">not-urgent-not-important</Quadrant>
     </main>
   );
 }
 
-function Quadrant({ children }) {
-  return <section className={`quadrant ${children}`}>{children}</section>;
+function Quadrant({ children, name }) {
+  return (
+    <section className={`quadrant ${children}`}>
+      <div>{name.toUpperCase()}</div>
+    </section>
+  );
 }
 
 function People() {
