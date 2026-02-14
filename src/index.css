@@ -76,10 +76,13 @@ nav div {
   overflow: hidden;
 }
 
+.quadrant > * {
+  padding-left: 2rem;
+}
+
 .quadrant div {
   display: flex;
   align-items: center;
-  padding-left: 2rem;
   height: 2.8rem;
   font-weight: bold;
   /* background-color: hsl(267, 25%, 10%); */
@@ -120,4 +123,31 @@ nav div {
 
 .not-urgent-not-important {
   grid-area: i;
+}
+
+.task-list {
+  display: flex;
+  align-items: center;
+  background-color: hsl(267, 25%, 10%);
+  border-bottom: #555 solid 0.1rem;
+  height: 2.4rem;
+  list-style: none;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.task-list button {
+  border: none;
+  aspect-ratio: 1;
+  height: 1rem;
+  width: auto;
+  border-radius: 100%;
+  background-color: none;
+  background: none;
+  border: white solid 0.1rem;
+  cursor: pointer;
 }

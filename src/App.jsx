@@ -7,6 +7,61 @@ const QUADRANTS = [
   { id: 4, title: "delete", matrixIntersection: "not-urgent-not-important" },
 ];
 
+const initialTasks = [
+  {
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    title: "This task is important but not urgent",
+    notes: "Needs approval first",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: false,
+    peopleInvolved: ["Emily Jane"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    title: "This task is not important but it is urgent",
+    notes: "Confirm dates",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: false,
+    urgent: true,
+    peopleInvolved: [],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    title: "This task is not urgent and it's not important",
+    notes: "",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: false,
+    urgent: false,
+    peopleInvolved: [],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+];
+
 function App() {
   return (
     <div className="container">
@@ -32,15 +87,15 @@ function Navbar() {
 function TasksView() {
   const [view, setView] = useState("eisenhower");
 
-  if (view === "eisenhower") return <Eisenhower />;
-  if (view === "people") return <People />;
+  if (view === "eisenhower") return <EisenhowerView />;
+  if (view === "people") return <PeopleView />;
 }
 
 function Button({ children }) {
   return <button className="btn">{children}</button>;
 }
 
-function Eisenhower() {
+function EisenhowerView() {
   return (
     <main className="eisenhower-view">
       <h3 className="eisenhower-title urgent">URGENT</h3>
@@ -66,11 +121,67 @@ function Quadrant({ index, title, matrixIntersection }) {
   return (
     <section className={`quadrant ${matrixIntersection}`}>
       <div style={{ backgroundColor: quadColour }}>{title.toUpperCase()}</div>
+      <TaskList matrixIntersection={matrixIntersection} />
     </section>
   );
 }
 
-function People() {
+function TaskList({ matrixIntersection }) {
+  if (matrixIntersection === "urgent-important")
+    return (
+      <ul className="task-list">
+        {initialTasks
+          .filter((task) => task.important && task.urgent)
+          .map((task) => (
+            <Task title={task.title} />
+          ))}
+      </ul>
+    );
+
+  if (matrixIntersection === "not-urgent-important")
+    return (
+      <ul className="task-list">
+        {initialTasks
+          .filter((task) => task.important && !task.urgent)
+          .map((task) => (
+            <Task title={task.title} />
+          ))}
+      </ul>
+    );
+
+  if (matrixIntersection === "urgent-not-important")
+    return (
+      <ul className="task-list">
+        {initialTasks
+          .filter((task) => !task.important && task.urgent)
+          .map((task) => (
+            <Task title={task.title} />
+          ))}
+      </ul>
+    );
+
+  if (matrixIntersection === "not-urgent-not-important")
+    return (
+      <ul className="task-list">
+        {initialTasks
+          .filter((task) => !task.important && !task.urgent)
+          .map((task) => (
+            <Task title={task.title} />
+          ))}
+      </ul>
+    );
+}
+
+function Task({ title }) {
+  return (
+    <li>
+      <button></button>
+      <span>{title}</span>
+    </li>
+  );
+}
+
+function PeopleView() {
   return <div>People</div>;
 }
 
