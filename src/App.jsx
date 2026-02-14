@@ -10,6 +10,398 @@ const QUADRANTS = [
 const initialTasks = [
   {
     id: 1,
+    title: "TOP",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
+    title: "This task is important and urgent",
+    notes: "Report was emailed last week",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: ["Mark Johnson"],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 1,
     title: "This task is important and urgent",
     notes: "Report was emailed last week",
     url: "",
@@ -66,7 +458,7 @@ const initialTasks = [
   },
   {
     id: 5,
-    title: "Here is another important and urgent task",
+    title: "BOTTOM",
     notes: "",
     url: "",
     dateToRemind: "",
@@ -95,15 +487,22 @@ const initialTasks = [
 ];
 
 function App() {
+  const [newTaskModalVisible, setNewTaskModalVisible] = useState(false);
+
+  function handleTaskModalVisible() {
+    setNewTaskModalVisible(() => !newTaskModalVisible);
+  }
+
   return (
     <div className="container">
-      <Navbar />
+      <Navbar onTaskModalVisible={handleTaskModalVisible} />
       <TasksView />
+      {newTaskModalVisible ? <NewTask /> : ""}
     </div>
   );
 }
 
-function Navbar() {
+function Navbar({ onTaskModalVisible }) {
   return (
     <nav>
       <div>
@@ -111,7 +510,9 @@ function Navbar() {
         <hr />
         <h2>Eisenhower</h2>
       </div>
-      <Button>Add Task</Button>
+      <button onClick={onTaskModalVisible} className="btn">
+        Add Task
+      </button>
     </nav>
   );
 }
@@ -123,8 +524,30 @@ function TasksView() {
   if (view === "people") return <PeopleView />;
 }
 
-function Button({ children }) {
-  return <button className="btn">{children}</button>;
+function NewTask() {
+  return (
+    <div className="new-task-container">
+      <div className="new-task-modal">
+        <h2>New Task</h2>
+        <form>
+          <div className="submit-new-task">
+            <input
+              type="submit"
+              className="btn--new-task"
+              id="btn--discard-new-task"
+              value={"Discard"}
+            />
+            <input
+              type="submit"
+              className="btn--new-task"
+              id="btn--create-new-task"
+              value={"Create"}
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 }
 
 function EisenhowerView() {
@@ -194,8 +617,9 @@ function TaskList({ filteredTasks }) {
 function Task({ title }) {
   return (
     <li>
-      <button></button>
-      <span>{title}</span>
+      <input type="checkbox" />
+      {/* <span>{title}</span> */}
+      <input type="text" value={title} />
     </li>
   );
 }
