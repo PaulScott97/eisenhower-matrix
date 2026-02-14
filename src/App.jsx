@@ -1,5 +1,12 @@
 import { useState } from "react";
 
+const QUADRANTS = [
+  { id: 1, title: "do", matrixIntersection: "urgent-important" },
+  { id: 2, title: "schedule", matrixIntersection: "not-urgent-important" },
+  { id: 3, title: "delegate", matrixIntersection: "urgent-not-important" },
+  { id: 4, title: "delete", matrixIntersection: "not-urgent-not-important" },
+];
+
 function App() {
   return (
     <div className="container">
@@ -40,18 +47,25 @@ function Eisenhower() {
       <h3 className="eisenhower-title not-urgent">NOT URGENT</h3>
       <h3 className="eisenhower-title important">IMPORTANT</h3>
       <h3 className="eisenhower-title not-important">NOT IMPORTANT</h3>
-      <Quadrant name="do">urgent-important</Quadrant>
-      <Quadrant name="plan">not-urgent-important</Quadrant>
-      <Quadrant name="delegate">urgent-not-important</Quadrant>
-      <Quadrant name="delete">not-urgent-not-important</Quadrant>
+
+      {QUADRANTS.map((q) => (
+        <Quadrant
+          key={q.id}
+          index={q.id}
+          title={q.title}
+          matrixIntersection={q.matrixIntersection}
+        />
+      ))}
     </main>
   );
 }
 
-function Quadrant({ children, name }) {
+function Quadrant({ index, title, matrixIntersection }) {
+  const quadColour = `hsl(${(360 / QUADRANTS.length) * index}, 25%, 15%)`;
+
   return (
-    <section className={`quadrant ${children}`}>
-      <div>{name.toUpperCase()}</div>
+    <section className={`quadrant ${matrixIntersection}`}>
+      <div style={{ backgroundColor: quadColour }}>{title.toUpperCase()}</div>
     </section>
   );
 }

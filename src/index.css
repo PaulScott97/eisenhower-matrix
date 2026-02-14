@@ -82,7 +82,7 @@ nav div {
   padding-left: 2rem;
   height: 2.8rem;
   font-weight: bold;
-  background-color: hsl(267, 25%, 10%);
+  /* background-color: hsl(267, 25%, 10%); */
   border-bottom: #555 solid 0.1rem;
   overflow: hidden;
   font-size: 1.2rem;
