@@ -9,6 +9,7 @@ const QUADRANTS = [
 
 const initialTasks = [
   {
+    id: 1,
     title: "This task is important and urgent",
     notes: "Report was emailed last week",
     url: "",
@@ -22,6 +23,7 @@ const initialTasks = [
     completed: false,
   },
   {
+    id: 2,
     title: "This task is important but not urgent",
     notes: "Needs approval first",
     url: "",
@@ -35,6 +37,7 @@ const initialTasks = [
     completed: false,
   },
   {
+    id: 3,
     title: "This task is not important but it is urgent",
     notes: "Confirm dates",
     url: "",
@@ -48,7 +51,36 @@ const initialTasks = [
     completed: false,
   },
   {
+    id: 4,
     title: "This task is not urgent and it's not important",
+    notes: "",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: false,
+    urgent: false,
+    peopleInvolved: [],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 5,
+    title: "Here is another important and urgent task",
+    notes: "",
+    url: "",
+    dateToRemind: "",
+    timeToRemind: "",
+    important: true,
+    urgent: true,
+    peopleInvolved: [],
+    subTasks: {},
+    dateCreated: Date.now(),
+    completed: false,
+  },
+  {
+    id: 6,
+    title: "This is a very unimportant task",
     notes: "",
     url: "",
     dateToRemind: "",
@@ -79,7 +111,7 @@ function Navbar() {
         <hr />
         <h2>Eisenhower</h2>
       </div>
-      <Button>+</Button>
+      <Button>Add Task</Button>
     </nav>
   );
 }
@@ -103,12 +135,12 @@ function EisenhowerView() {
       <h3 className="eisenhower-title important">IMPORTANT</h3>
       <h3 className="eisenhower-title not-important">NOT IMPORTANT</h3>
 
-      {QUADRANTS.map((q) => (
+      {QUADRANTS.map((quad) => (
         <Quadrant
-          key={q.id}
-          index={q.id}
-          title={q.title}
-          matrixIntersection={q.matrixIntersection}
+          key={quad.id}
+          index={quad.id}
+          title={quad.title}
+          matrixIntersection={quad.matrixIntersection}
         />
       ))}
     </main>
@@ -116,60 +148,47 @@ function EisenhowerView() {
 }
 
 function Quadrant({ index, title, matrixIntersection }) {
-  const quadColour = `hsl(${(360 / QUADRANTS.length) * index}, 25%, 15%)`;
+  const bannerColour = `hsl(${(360 / QUADRANTS.length) * index}, 25%, 15%)`;
+  const numTasksColour = `hsl(${(360 / QUADRANTS.length) * index}, 25%, 35%)`;
+  const filteredTasks = initialTasks.filter((task) => {
+    if (matrixIntersection === "urgent-important")
+      return task.important && task.urgent;
+    if (matrixIntersection === "not-urgent-important")
+      return task.important && !task.urgent;
+    if (matrixIntersection === "urgent-not-important")
+      return !task.important && task.urgent;
+    if (matrixIntersection === "not-urgent-not-important")
+      return !task.important && !task.urgent;
+  });
+  const numTasks = filteredTasks.length;
 
   return (
     <section className={`quadrant ${matrixIntersection}`}>
-      <div style={{ backgroundColor: quadColour }}>{title.toUpperCase()}</div>
-      <TaskList matrixIntersection={matrixIntersection} />
+      <div
+        className="quadrant-banner"
+        style={{ backgroundColor: bannerColour }}
+      >
+        <span>{title.toUpperCase()}</span>
+        <div className="num-tasks" style={{ backgroundColor: numTasksColour }}>
+          {numTasks}
+        </div>
+      </div>
+      <TaskList
+        filteredTasks={filteredTasks}
+        matrixIntersection={matrixIntersection}
+      />
     </section>
   );
 }
 
-function TaskList({ matrixIntersection }) {
-  if (matrixIntersection === "urgent-important")
-    return (
-      <ul className="task-list">
-        {initialTasks
-          .filter((task) => task.important && task.urgent)
-          .map((task) => (
-            <Task title={task.title} />
-          ))}
-      </ul>
-    );
-
-  if (matrixIntersection === "not-urgent-important")
-    return (
-      <ul className="task-list">
-        {initialTasks
-          .filter((task) => task.important && !task.urgent)
-          .map((task) => (
-            <Task title={task.title} />
-          ))}
-      </ul>
-    );
-
-  if (matrixIntersection === "urgent-not-important")
-    return (
-      <ul className="task-list">
-        {initialTasks
-          .filter((task) => !task.important && task.urgent)
-          .map((task) => (
-            <Task title={task.title} />
-          ))}
-      </ul>
-    );
-
-  if (matrixIntersection === "not-urgent-not-important")
-    return (
-      <ul className="task-list">
-        {initialTasks
-          .filter((task) => !task.important && !task.urgent)
-          .map((task) => (
-            <Task title={task.title} />
-          ))}
-      </ul>
-    );
+function TaskList({ filteredTasks }) {
+  return (
+    <ul className="task-list">
+      {filteredTasks.map((task) => (
+        <Task key={task.id} title={task.title} />
+      ))}
+    </ul>
+  );
 }
 
 function Task({ title }) {

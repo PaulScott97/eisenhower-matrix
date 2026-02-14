@@ -34,11 +34,11 @@ nav div {
 
 .btn {
   border: none;
-  aspect-ratio: 1;
   height: 100%;
-  width: auto;
   border-radius: 0.6rem;
-  font-size: 1.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0 0.6rem;
   background-color: hsl(267, 75%, 60%);
   transition: background-color 0.3s;
 }
@@ -76,19 +76,31 @@ nav div {
   overflow: hidden;
 }
 
-.quadrant > * {
-  padding-left: 2rem;
+.quadrant > div,
+.quadrant li {
+  padding: 0 1rem;
 }
 
-.quadrant div {
+.quadrant-banner {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 2.8rem;
   font-weight: bold;
   /* background-color: hsl(267, 25%, 10%); */
   border-bottom: #555 solid 0.1rem;
   overflow: hidden;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+}
+
+.num-tasks {
+  display: grid;
+  place-content: center;
+  font-size: 1rem;
+  height: 1.6rem;
+  width: auto;
+  padding: 0.05rem 0.8rem;
+  border-radius: 999999rem;
 }
 
 .urgent {
@@ -126,17 +138,17 @@ nav div {
 }
 
 .task-list {
-  display: flex;
   align-items: center;
+  /* height: 2.4rem; */
   background-color: hsl(267, 25%, 10%);
-  border-bottom: #555 solid 0.1rem;
-  height: 2.4rem;
   list-style: none;
 }
 
 .task-list li {
+  border-bottom: #555 solid 0.1rem;
   display: flex;
   align-items: center;
+  height: 2.4rem;
   gap: 0.4rem;
 }
 
